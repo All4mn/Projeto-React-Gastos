@@ -5,6 +5,7 @@ const ListaGasto = ({propGasto}) => {
         <p>{propGasto.nome}</p>
         <p>{propGasto.valor}</p>
         <p>{propGasto.tipo}</p>
+        <button className="excluir">x</button>
     </div>
   )
 }
