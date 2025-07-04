@@ -5,34 +5,36 @@ const AddGasto = () => {
   const [valor,setValor] = useState("")
   const [tipo,setTipo] = useState("")
   
-  const addNome = (e)=>{
-    nome.setNome(e)
-    setNome("")
-  }
-  const addValor = (e)=>{
-    valor.setValor(e)
-    setValor("")
-  }
-
-  const addTipo = (e)=>{
-    tipo.setTipo(e)
-    setTipo("")
-  }
-
   const hoverAdd = ()=>{
+    if(!nome){
+      alert("o campo Nome é obrigatório")
+      return
+    }
+    if(!valor){
+      alert("o campo Valor é obrigatório")
+      return
+    }
+    if(tipo == ""){
+      alert("selecione o tipo")
+      return
+    }
+    //adicionar
     
+    setNome("")
+    setValor("")
+    setTipo("")
   }
 
   return (
     <div className='addGasto'>
-      <input type="text" placeholder='Nome' onChange={(e)=>(addNome(e.target.value))}/>
-      <input type="number" placeholder='Valor'onChange={(e)=>(addValor(e.target.value))}/>
-      <select onChange={(e)=>(addTipo(e.target.value))} >
+      <input type="text" value={nome} placeholder='Nome (obrigatório)' onChange={(e)=>(setNome(e.target.value))}/>
+      <input type="number" value={valor} placeholder='Valor (obrigatório)'onChange={(e)=>(setValor(e.target.value))}/>
+      <select value={tipo} onChange={(e)=>(setTipo(e.target.value))} >
           <option value="">Tipo</option>
           <option value="fixo">Fixo</option>
           <option value="variavel">Variavel</option>
       </select>
-      <button>Adicionar</button>
+      <button onClick={hoverAdd}>Adicionar</button>
     </div>
   )
 }
