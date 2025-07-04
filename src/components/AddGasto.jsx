@@ -1,7 +1,7 @@
 import {useState} from 'react'
-import './AddGasto.css'
+import '../style/AddGasto.css'
 
-const AddGasto = () => {
+const AddGasto = ({adicionarGasto}) => {
   const [nome,setNome] = useState("")
   const [valor,setValor] = useState("")
   const [tipo,setTipo] = useState("")
@@ -16,11 +16,15 @@ const AddGasto = () => {
       return
     }
     if(tipo == ""){
-      alert("selecione o tipo")
+      alert("selecione o Tipo do gasto")
       return
     }
-    //adicionar
-    
+
+    let arrNome = nome.split("")
+    arrNome[0] = arrNome[0].toUpperCase()
+    const newNome = arrNome.join("")
+
+    adicionarGasto(newNome,valor,tipo)
     setNome("")
     setValor("")
     setTipo("")
@@ -28,14 +32,14 @@ const AddGasto = () => {
 
   return (
     <div className='addGasto'>
-      <input type="text" value={nome} placeholder='Nome (obrigatório)' onChange={(e)=>(setNome(e.target.value))}/>
-      <input type="number" value={valor} placeholder='Valor (obrigatório)'onChange={(e)=>(setValor(e.target.value))}/>
+      <input type="text" value={nome} placeholder='Nome(obrigatório)' onChange={(e)=>(setNome(e.target.value))}/>
+      <input type="number" value={valor} placeholder='Valor(obrigatório)'onChange={(e)=>(setValor(e.target.value))}/>
       <select value={tipo} onChange={(e)=>(setTipo(e.target.value))} >
           <option value="">Tipo</option>
           <option value="fixo">Fixo</option>
           <option value="variavel">Variavel</option>
       </select>
-      <button onClick={hoverAdd}>Adicionar</button>
+      <button className='botao'onClick={hoverAdd}>Adicionar</button>
     </div>
   )
 }

@@ -27,3 +27,20 @@
     margin-top: 1.5rem;
 }
 
+/* adicionei essa classe para a imagem de excluir mas não deu certo */
+.botao{
+    border: none;
+    border-radius: 3px;
+    padding: 1px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botao:hover{
+    padding: 3px;
+}
+
+.botaoCriar{
+    margin: 20px;
+    width: 100px;
+}
