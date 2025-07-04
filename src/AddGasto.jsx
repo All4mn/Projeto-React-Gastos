@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import './AddGasto.css'
 
 const AddGasto = () => {
   const [nome,setNome] = useState("")

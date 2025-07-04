@@ -3,10 +3,12 @@ const ListaGasto = ({propGasto}) => {
 
     return (
     <div className='itemLista'>
-        <p id='itemNome'>{propGasto.nome}</p>
-        <p>R$ {propGasto.valor}</p>
-        <p>{propGasto.tipo}</p>
-        <button className="excluir">x</button>
+      <div className='outraItemLista' >
+          <p id='itemNome'>{propGasto.nome}</p>
+          <p>R$ {propGasto.valor}</p>
+          <p>{propGasto.tipo}</p>
+      </div>
+          <i className="bi bi-x-circle-fill" id='excluir'></i>
     </div>
   )
 }
