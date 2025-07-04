@@ -1,25 +1,37 @@
 .itemLista{
-    width: 50rem;
     height: auto;
-    border-color: blue ;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
 
+.outraItemLista{
+    display: flex;
+    flex-direction: row;
+    width: 50rem;
+    background-color: #9b94d5;
+}
+
 
 p{
-    color: blueviolet;
+    color: #673c90;
     width: 6rem;
 }
 
 #itemNome{
     width: 15rem;
+    padding-left: .3125rem;
 }
 
-.excluir{
-    width: 1rem;
-    height: 1rem;
-    text-align: center;
+#excluir{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+i#excluir.bi.bi-x-circle-fill{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9b94d5;
 }
