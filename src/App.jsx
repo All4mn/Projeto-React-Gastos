@@ -1,9 +1,15 @@
 import { useState } from 'react'
 import './App.css'
-import AddGasto from './AddGasto'
-import ListaGasto from './ListaGasto'
+import AddGasto from './components/AddGasto'
+import ListaGasto from './components/ListaGasto'
 
 function App() {
+  const [criarBox,setCriarBox] = useState(false)
+  
+  const toggleCriarBox= () =>{
+      setCriarBox(!criarBox)
+  }
+
   const [gastos,setGasto] = useState([
     //teste
     {id:1,
@@ -23,15 +29,31 @@ function App() {
     }
   ])
 
+  const adicionarGasto = (nome,valor,tipo)=>{
+    const newGasto = [...gastos,{
+      id: Date.now(),
+      nome,
+      valor,
+      tipo
+    }]
 
+    setGasto(newGasto)
+  }
+
+  const removerGasto = (id)=>{
+    setGasto(gastos.filter((gastos) => gastos.id !== id))
+  }
 
   return (
     <div className='container'>
         <div className="titulo"><h1>Controle de Gastos</h1>
         </div>
-        <AddGasto/>
+        <button className='botaoCriar botao' onClick={toggleCriarBox}>+Criar</button>
+        <div style={{ display: criarBox ? "block" : "none" }} >
+        <AddGasto  adicionarGasto = {adicionarGasto}/>
+        </div>
         <div className='gastos'>
-          {gastos.map((objGasto)=>(<ListaGasto key={objGasto.id} propGasto={objGasto}/>))}
+          {gastos.map((objGasto)=>(<ListaGasto key={objGasto.id} propGasto={objGasto} removerGasto = {removerGasto}/>))}
         </div>
       </div>
   )
