@@ -27,13 +27,13 @@ function App() {
 
   return (
     <div className='container'>
-      <h1>Controle de Gastos</h1>
-      <AddGasto/>
-      <div className='gastos'>{gastos.map((objGasto)=>(  
-      <ListaGasto key={objGasto.id} propGasto={objGasto}/>  
-      ))}</div>
-      
-    </div>
+        <div className="titulo"><h1>Controle de Gastos</h1>
+        </div>
+        <AddGasto/>
+        <div className='gastos'>
+          {gastos.map((objGasto)=>(<ListaGasto key={objGasto.id} propGasto={objGasto}/>))}
+        </div>
+      </div>
   )
 }
 

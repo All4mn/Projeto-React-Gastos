@@ -1,21 +1,28 @@
-*{
+:root{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
 }
 
 .container{
-    width: 100vw;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo{
+    display: flex;
+    align-items: flex-start;
+}
+
+.gastos{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
     flex-direction: column;
 }
 
-.listaGasto{
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-}
