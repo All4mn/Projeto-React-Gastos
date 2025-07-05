@@ -1,3 +1,17 @@
+:root{
+    --caixa-alta: "New Amsterdam", sans-serif;
+    --cursiva: "Imperial Script", cursive;
+    --fonte-padrao: "Questrial", sans-serif;
+
+    --cor-sova: #9ca3db;
+    --cor-yoru: #9b94d5;
+    --cor-reyna: #55286f;
+    --cor-vyse: #673c90;
+    --cor-omen: #52489c;
+    --cor-clove: #d8b4e2;
+    --cor-jett: #f4ebd9;
+}
+
 .itemLista{
     height: auto;
     display: flex;
@@ -12,12 +26,12 @@
     margin-bottom: 10px;
     border-radius: 3px;
     width: 50rem;
-    background-color: #9b94d5;
+    background-color: var(--cor-yoru);
 }
 
 
 p{
-    color: #673c90;
+    color: var(--cor-vyse);
     width: 6rem;
 }
 
@@ -36,5 +50,5 @@ i#excluir.bi.bi-x-circle-fill{
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #9b94d5;
+    color: var(--cor-sova);
 }

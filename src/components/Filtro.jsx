@@ -1,7 +1,8 @@
+import '../style/Filtro.css'
 
 const Filtro = ({filtrar, setFiltrar}) => {
   return (
-    <div>
+    <div id='filtroContainer'>
         <h2>Filtrar:</h2>
         <select value={filtrar} onChange={(e) => setFiltrar(e.target.value)}>
             <option value="all">Todos</option>

@@ -51,11 +51,14 @@ function App() {
 
   return (
     <div className='container'>
-        <div className="titulo"><h1>Controle de Gastos</h1>
+        <div className="titulo">
+        <h1 id='titulo-cursiva'>Controle de</h1>
+        <h1 id='titulo-caixaalta'>FINANÇAS</h1>
         </div>
-        <div>
-        <button className='botaoCriar botao' onClick={toggleCriarBox}>+Criar</button>
+        <div className='CriarFiltroCambio'>
+        <button className='botaoCriar botao' onClick={toggleCriarBox}>Criar <span>+</span></button>
         <Filtro filtrar={filtrar} setFiltrar={setFiltrar}/>
+        {/* colocar aq o câmbio API */}
         </div>
         <div style={{ display: criarBox ? "block" : "none" }} >
         <AddGasto  adicionarGasto = {adicionarGasto}/>
