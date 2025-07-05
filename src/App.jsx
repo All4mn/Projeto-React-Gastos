@@ -1,59 +1,58 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import AddGasto from './components/AddGasto'
 import ListaGasto from './components/ListaGasto'
 import Filtro from './components/Filtro'
 
 function App() {
-  const [gastos,setGasto] = useState([
-    //teste
-    {id:1,
-    nome:"Aluguel",
-    valor: 1500,
-    tipo: "Fixo"
-    },
-    {id:2,
-    nome:"Restaurante",
-    valor: 200,
-    tipo: "Variavel"
-    },
-    {id:3,
-    nome:"Agua",
-    valor: 400,
-    tipo: "Fixo"
-    }
-  ])
+
+  //States:
+
+  const [gastos,setGasto] = useState([])
   
   const [criarBox,setCriarBox] = useState(false)
   
   const [filtrar,setFiltrar] = useState("all")
   
   const [isClicked, setIsClicked] = useState(false)
+  
+
+  //Funções:
 
   const adicionarGasto = (nome,valor,tipo)=>{
-    const newGasto = [...gastos,{
+
+    const newGasto = {
       id: Date.now(),
       nome,
       valor,
       tipo
-    }]
+    }
+    const novosGastos = [...gastos, newGasto]
+    setGasto(novosGastos)
 
-    setGasto(newGasto)
+    //salvar os gastos no localStorage
+    localStorage.setItem('gastos', JSON.stringify(novosGastos))
   }
+  
+  //carregar os gastos do localStorage
+  useEffect(() => { const gastosSalvos = JSON.parse(localStorage.getItem('gastos')) || [];setGasto(gastosSalvos);}, []);
 
+  
+  const removerGasto = (id)=>{
+    const novosGastos = gastos.filter((gasto) => gasto.id !== id);
+    setGasto(novosGastos);
+
+    //remover os gastos do localStorage
+    localStorage.setItem('gastos', JSON.stringify(novosGastos));
+  }
+  
   const toggleCriarBox= () =>{
     setCriarBox(!criarBox)
   }
   
-  const removerGasto = (id)=>{
-    setGasto(gastos.filter((gastos) => gastos.id !== id))
-  }
-
   const mudarCor = () =>{
     setIsClicked(!isClicked)
   }
-
-
 
 
   return (
@@ -63,7 +62,8 @@ function App() {
           <h1 id='titulo-cursiva'>Controle de</h1>
           <h1 id='titulo-caixaalta'>FINANÇAS</h1>
           </div>
-          <i class="bi bi-brightness-high-fill" className={isClicked ? 'bi bi-brightness-high-fill botaoluzclaro' : 'bi bi-brightness-high-fill botaoluzescuro'} onClick={mudarCor}></i>
+          {/* (aqui em baixo) class="bi bi-brightness-high-fill" parece desnecessario, e tava dando um erro no console */}
+          <i  className= {isClicked ? 'bi bi-brightness-high-fill botaoluzclaro' : 'bi bi-brightness-high-fill botaoluzescuro'} onClick={mudarCor}></i>
         </div>
         <div className='CriarFiltroCambio'>
         <button className='botaoCriar botao' onClick={toggleCriarBox}>Criar <span>+</span></button>
@@ -79,7 +79,8 @@ function App() {
             filtrar === "all"? true: filtrar === "fix"? objGasto.tipo === "Fixo": objGasto.tipo === "Variavel")
           .map((objGasto)=>(
             <ListaGasto 
-            key={objGasto.id} 
+            isClicked={isClicked} // precisava disso aqui anna, agr tas funcionando - God Of Codes (allan)
+            key={objGasto.id}
             propGasto={objGasto} 
             removerGasto={removerGasto}/>))}
         </div>
