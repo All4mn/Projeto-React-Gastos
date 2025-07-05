@@ -1,7 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Cinzel:wght@400..900&family=Imperial+Script&family=Quicksand:wght@300..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --caixa-alta: "New Amsterdam", sans-serif;
+    --cursiva: "Imperial Script", cursive;
+    --fonte-padrao: "Questrial", sans-serif;
+
+    --cor-sova: #9ca3db;
+    --cor-yoru: #9b94d5;
+    --cor-reyna: #55286f;
+    --cor-omen: #52489c;
+    --cor-clove: #d8b4e2;
+    --cor-jett: #f4ebd9;
+}
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: var(--fonte-padrao);
 }
 
 .container{
@@ -9,14 +25,34 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
-    background-color: #55286f;
+    background-color: var(--cor-reyna);
 }
 
 .titulo{
     display: flex;
-    align-items: flex-start;
-    margin: 0.5rem;
-    color: #d8b4e2;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 1.5rem;
+    width: 12rem;
+}
+
+#titulo-cursiva{
+    font-family: var(--cursiva);
+    color: var(--cor-sova);
+    font-weight: 200;
+    font-size: 35px;
+}
+
+#titulo-caixaalta{
+    font-family: var(--caixa-alta);
+    font-weight: 900;
+    font-style: italic;
+    color: var(--cor-clove);
+    line-height: 5px;
+    font-size: 30px;
+    letter-spacing: -2px;
+
 }
 
 .gastos{
@@ -40,7 +76,33 @@
     padding: 3px;
 }
 
+/* aq pra cima é o botao do excluir blz? */
+
 .botaoCriar{
-    margin: 20px;
-    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6.25rem;
+    height: 2rem;
+    margin: 1.5rem;
+    margin-left: 4rem;
+    font-size: 13px;
+    font-family: var(--fonte-padrao);
+    border-radius: 15px;
+    background-color: var(--cor-sova);
+    color: var(--cor-jett);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.botaoCriar span{
+    font-size: 25px;
+    margin-left: 5px;
+    color: var(--cor-reyna);
+}
+
+.CriarFiltroCambio{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }

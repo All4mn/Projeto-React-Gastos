@@ -1,0 +1,40 @@
+:root{
+    --caixa-alta: "New Amsterdam", sans-serif;
+    --cursiva: "Imperial Script", cursive;
+    --fonte-padrao: "Questrial", sans-serif;
+
+    --cor-sova: #9ca3db;
+    --cor-yoru: #9b94d5;
+    --cor-reyna: #55286f;
+    --cor-omen: #52489c;
+    --cor-clove: #d8b4e2;
+    --cor-jett: #f4ebd9;
+}
+
+#filtroContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-omen);
+    border-radius: 15px;
+    width: 11rem;
+    height: 2rem;
+}
+
+h2{
+    color: var(--cor-jett);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    font-size: 13px;
+    color: var(--cor-jett);
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+select{
+    width: 6.25rem;
+    height: 1.4rem;
+    border-radius: 10px;
+    background-color: var(--cor-clove);
+}
