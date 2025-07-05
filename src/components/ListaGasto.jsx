@@ -1,8 +1,6 @@
 import '../style/ListaGasto.css'
 const ListaGasto = ( {propGasto,removerGasto,isClicked}) => { 
 
-  // o onclick do app pra mudar as cores n ta funcionando aq, se alguem puder tentar conectar eles eu agradeço - anna
-
   return (
     <div className='itemLista'>
       <div className={isClicked ? 'outraItemLista corlistaescuro' : 'outraItemLista corlistaclaro'} >
@@ -10,7 +8,7 @@ const ListaGasto = ( {propGasto,removerGasto,isClicked}) => {
           <p>R$ {propGasto.valor}</p>
           <p>{propGasto.tipo}</p>
       </div>
-          <i className="bi bi-x-circle-fill botao"  onClick={()=>{removerGasto(propGasto.id)}} id='excluir'></i>
+          <i className="bi bi-x-circle-fill"  onClick={()=>{removerGasto(propGasto.id)}} id='excluir'></i>
     </div>
   )
 }
