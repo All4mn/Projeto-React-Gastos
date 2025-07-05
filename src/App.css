@@ -8,9 +8,13 @@
     --cor-sova: #9ca3db;
     --cor-yoru: #9b94d5;
     --cor-reyna: #55286f;
+    --cor-vyse: #673c90;
     --cor-omen: #52489c;
     --cor-clove: #d8b4e2;
     --cor-jett: #f4ebd9;
+
+    --cor-yoru-clove-2: #ffaeb1;
+    --cor-omen-vyse-2: #6ba368;
 }
 
 *{
@@ -25,7 +29,20 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
+}
+
+.container-cor-escura{
     background-color: var(--cor-reyna);
+}
+
+.container-cor-clara{
+    background-color: var(--cor-jett);
+}
+
+.box-cabecalho{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .titulo{
@@ -52,7 +69,31 @@
     line-height: 5px;
     font-size: 30px;
     letter-spacing: -2px;
+    
+}
 
+i.bi.bi-brightness-high-fill{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem;
+    margin-top: 2.2rem;
+}
+
+i.bi.bi-brightness-high-fill::before{
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.botaoluzescuro{
+    color: var(--cor-reyna);
+}
+
+.botaoluzclaro{
+    color: var(--cor-jett);
 }
 
 .gastos{
