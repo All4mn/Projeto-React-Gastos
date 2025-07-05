@@ -1,8 +1,11 @@
 import '../style/ListaGasto.css'
-const ListaGasto = ( {propGasto,removerGasto}) => { 
+const ListaGasto = ( {propGasto,removerGasto,isClicked}) => { 
+
+  // o onclick do app pra mudar as cores n ta funcionando aq, se alguem puder tentar conectar eles eu agradeço - anna
+
   return (
     <div className='itemLista'>
-      <div className='outraItemLista' >
+      <div className={isClicked ? 'outraItemLista corlistaescuro' : 'outraItemLista corlistaclaro'} >
           <p id='itemNome'>{propGasto.nome}</p>
           <p>R$ {propGasto.valor}</p>
           <p>{propGasto.tipo}</p>

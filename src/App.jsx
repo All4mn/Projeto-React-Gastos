@@ -23,10 +23,12 @@ function App() {
     tipo: "Fixo"
     }
   ])
-
+  
   const [criarBox,setCriarBox] = useState(false)
-
+  
   const [filtrar,setFiltrar] = useState("all")
+  
+  const [isClicked, setIsClicked] = useState(false)
 
   const adicionarGasto = (nome,valor,tipo)=>{
     const newGasto = [...gastos,{
@@ -42,18 +44,26 @@ function App() {
   const toggleCriarBox= () =>{
     setCriarBox(!criarBox)
   }
-
+  
   const removerGasto = (id)=>{
     setGasto(gastos.filter((gastos) => gastos.id !== id))
   }
 
+  const mudarCor = () =>{
+    setIsClicked(!isClicked)
+  }
+
+
 
 
   return (
-    <div className='container'>
-        <div className="titulo">
-        <h1 id='titulo-cursiva'>Controle de</h1>
-        <h1 id='titulo-caixaalta'>FINANÇAS</h1>
+    <div className={isClicked ? 'container container-cor-escura' : 'container container-cor-clara'}>
+        <div className="box-cabecalho">
+          <div className="titulo">
+          <h1 id='titulo-cursiva'>Controle de</h1>
+          <h1 id='titulo-caixaalta'>FINANÇAS</h1>
+          </div>
+          <i class="bi bi-brightness-high-fill" className={isClicked ? 'bi bi-brightness-high-fill botaoluzclaro' : 'bi bi-brightness-high-fill botaoluzescuro'} onClick={mudarCor}></i>
         </div>
         <div className='CriarFiltroCambio'>
         <button className='botaoCriar botao' onClick={toggleCriarBox}>Criar <span>+</span></button>

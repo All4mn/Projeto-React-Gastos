@@ -10,6 +10,9 @@
     --cor-omen: #52489c;
     --cor-clove: #d8b4e2;
     --cor-jett: #f4ebd9;
+
+    --cor-yoru-clove-2: #ffaeb1;
+    --cor-omen-vyse-2: #6ba368;
 }
 
 .itemLista{
@@ -26,7 +29,14 @@
     margin-bottom: 10px;
     border-radius: 3px;
     width: 50rem;
+}
+
+.corlistaescuro{
     background-color: var(--cor-yoru);
+}
+
+.corlistaclaro{
+    background-color: var(--cor-yoru-clove-2);
 }
 
 
