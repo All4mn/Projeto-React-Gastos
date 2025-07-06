@@ -54,6 +54,13 @@ function App() {
     setIsClicked(!isClicked)
   }
 
+  const total = () =>{
+    let soma = 0
+    for (let i in gastos){
+      soma += parseInt(gastos[i].valor)
+    }
+    return soma
+  }
 
   return (
     <div className={isClicked ? 'container container-cor-escura' : 'container container-cor-clara'}>
@@ -68,6 +75,9 @@ function App() {
         <div className='CriarFiltroCambio'>
         <button className='botaoCriar botao' onClick={toggleCriarBox}>Criar <span>+</span></button>
         <Filtro filtrar={filtrar} setFiltrar={setFiltrar}/>
+        <div>
+          <p>Total: {total()}</p>
+        </div>
         {/* colocar aq o câmbio API */}
         </div>
         <div style={{ display: criarBox ? "block" : "none" }} >
