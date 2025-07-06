@@ -76,7 +76,7 @@ function App() {
         <button className='botaoCriar botao' onClick={toggleCriarBox}>Criar <span>+</span></button>
         <Filtro filtrar={filtrar} setFiltrar={setFiltrar}/>
         <div>
-          <p>Total: {total()}</p>
+          <p className='Total'>Total: {total()}</p>
         </div>
         {/* colocar aq o câmbio API */}
         </div>

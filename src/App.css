@@ -32,10 +32,12 @@
 }
 
 .container-cor-escura{
+    transition: 0.5s;
     background-color: var(--cor-reyna);
 }
 
 .container-cor-clara{
+    transition: 0.5s;
     background-color: var(--cor-jett);
 }
 
@@ -145,4 +147,8 @@ i.bi.bi-brightness-high-fill::before{
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.Total{
+    color: #d8b4e2;
 }
