@@ -3,6 +3,7 @@ import './App.css'
 import AddGasto from './components/AddGasto'
 import ListaGasto from './components/ListaGasto'
 import Filtro from './components/Filtro'
+import Cambio from './components/Cambio'
 
 function App() {
 
@@ -16,6 +17,9 @@ function App() {
   
   const [isClicked, setIsClicked] = useState(false)
   
+  const [cotacao, setCotacao] = useState(1)
+
+  const [sigla,setSigla] = useState("BRL")
 
   //Funções:
 
@@ -57,9 +61,9 @@ function App() {
   const total = () =>{
     let soma = 0
     for (let i in gastos){
-      soma += parseInt(gastos[i].valor)
+      soma += parseFloat(gastos[i].valor)
     }
-    return soma
+    return Number(soma/ cotacao).toFixed(2)
   }
 
   return (
@@ -78,7 +82,8 @@ function App() {
         <div>
           <p className='Total'>Total: {total()}</p>
         </div>
-        {/* colocar aq o câmbio API */}
+        <Cambio setCotacao={setCotacao} setSigla={setSigla}/> 
+        {/* fiz separado msm pq senao dava mt trampo */}
         </div>
         <div style={{ display: criarBox ? "block" : "none" }} >
         <AddGasto  adicionarGasto = {adicionarGasto}/>
@@ -92,7 +97,9 @@ function App() {
             isClicked={isClicked} // precisava disso aqui anna, agr tas funcionando - God Of Codes (allan)
             key={objGasto.id}
             propGasto={objGasto} 
-            removerGasto={removerGasto}/>))}
+            removerGasto={removerGasto}
+            cotacao = {cotacao}
+            sigla = {sigla}/>))}
         </div>
       </div>
   )

@@ -1,11 +1,15 @@
 import '../style/ListaGasto.css'
-const ListaGasto = ( {propGasto,removerGasto,isClicked}) => { 
+const ListaGasto = ( {propGasto,removerGasto,isClicked, cotacao, sigla}) => { 
+
+  const valorNumerico = Number(propGasto.valor)
+  const contacaoNumerica = Number(cotacao)
+  const valorCerto = Number(valorNumerico / contacaoNumerica).toFixed(2)
 
   return (
     <div className='itemLista'>
       <div className={isClicked ? 'outraItemLista corlistaescuro' : 'outraItemLista corlistaclaro'} >
           <p id='itemNome'>{propGasto.nome}</p>
-          <p>R$ {propGasto.valor}</p>
+          <p>{sigla} {(valorCerto)}</p>
           <p>{propGasto.tipo}</p>
       </div>
           <i className="bi bi-x-circle-fill"  onClick={()=>{removerGasto(propGasto.id)}} id='excluir'></i>
