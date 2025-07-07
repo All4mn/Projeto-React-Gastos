@@ -19,10 +19,10 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-color: var(--cor-omen);
     border-radius: 15px;
-    width: 11rem;
+    width: 9rem;
     height: 2rem;
 }
 
@@ -34,20 +34,21 @@
     background-color: var(--cor-omen-vyse-2);
 }
 
-h2{
+.h2Cambio{
     color: var(--cor-jett);
     font-weight: bold;
     letter-spacing: 0.5px;
     font-size: 13px;
     color: var(--cor-jett);
-    margin-right: 5px;
-    margin-left: 5px;
+    margin-left: 0.9rem;
+    margin-right: 10px;
 }
 
 .selecionar{
-    width: 6.25rem;
+    width: 4rem;
     height: 1.4rem;
     border-radius: 10px;
+    margin-right: 2rem;
 }
 
 .selecionarCLARO{

@@ -25,8 +25,16 @@ function App() {
 
   const adicionarGasto = (nome,valor,tipo)=>{
 
+    const novaData = new Date()
+    const newDia = novaData.getDay() + 6
+    const newMes = novaData.getMonth() + 1
+    const newAno = novaData.getFullYear()
+
     const newGasto = {
       id: Date.now(),
+      dia: newDia,
+      mes: newMes,
+      ano: newAno,
       nome,
       valor,
       tipo
@@ -70,28 +78,29 @@ function App() {
     <div className={isClicked ? 'container container-cor-escura' : 'container container-cor-clara'}>
         <div className="TUDO">
           <div className="box-cabecalho">
-            <div className="titulo">
-            <h1 id='titulo-cursiva'>Controle de</h1>
-            <h1 id='titulo-caixaalta'>FINANÇAS</h1>
+            <div className='titulo'>
+            <h1 className={isClicked ? 'titulo-cursivaCLARO' : 'titulo-cursivaCLARO'} id='titulo-cursiva'>Controle de</h1>
+            <h1 className={isClicked ? 'titulo-caixaaltaESCURO' : 'titulo-caixaaltaCLARO'} id='titulo-caixaalta'>FINANÇAS</h1>
             </div>
             {/* (aqui em baixo) class="bi bi-brightness-high-fill" parece desnecessario, e tava dando um erro no console */}
-            <i  className= {isClicked ? 'bi bi-brightness-high-fill botaoluzclaro' : 'bi bi-brightness-high-fill botaoluzescuro'} onClick={mudarCor}></i>
+            <i  className= {isClicked ? 'bi bi-brightness-high-fill botaoluzclaro' : 'bi bi-moon-fill botaoluzescuro'} onClick={mudarCor}></i>
           </div>
           <div className='CriarFiltroCambio'>
           <button className='botaoCriar botao' onClick={toggleCriarBox}>Criar <span>+</span></button>
           <div id="filtroTotalCambio">
-            <Filtro filtrar={filtrar} setFiltrar={setFiltrar}/>
-            <Cambio setCotacao={setCotacao} setSigla={setSigla}/>
+            <Filtro isClicked={isClicked} filtrar={filtrar} setFiltrar={setFiltrar}/>
+            <Cambio isClicked={isClicked} setCotacao={setCotacao} setSigla={setSigla}/>
           </div>
           </div>
           {/* fiz separado msm pq senao dava mt trampo */}
           <div style={{ display: criarBox ? "block" : "none" }} >
-          <AddGasto  adicionarGasto = {adicionarGasto} isClicked={isClicked}/>
+          <AddGasto isClicked={isClicked} adicionarGasto = {adicionarGasto}/>
           </div>
           <div className="boxcabecalho">
             <div className= {isClicked ? 'cabecalho cabecalhoCLARO' : 'cabecalho cabecalhoESCURO'}>
               <h2 id='primeirofilho'>Descrição</h2>
               <h2 id='segundofilho'>Valor</h2>
+              <h2 id='quartofilho'>Data</h2>
               <h2 id='terceirofilho'>Categoria</h2>
             </div>
           </div>

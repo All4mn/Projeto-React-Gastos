@@ -67,12 +67,6 @@
     color: var(--cor-sova);
 }
 
-.titulo-cursivaCLARO{
-    color: var(--cor-sova);
-}
-
-
-
 #titulo-caixaalta{
     font-family: var(--caixa-alta);
     font-weight: 900;
@@ -101,6 +95,22 @@ i.bi.bi-brightness-high-fill{
 }
 
 i.bi.bi-brightness-high-fill::before{
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+i.bi.bi-moon-fill{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem;
+    margin-top: 2.2rem;
+}
+
+i.bi.bi-moon-fill::before{
     font-size: 25px;
     display: flex;
     flex-direction: row;
@@ -140,11 +150,15 @@ i.bi.bi-brightness-high-fill::before{
 }
 
 .cabecalho #segundofilho{
-    margin-left: 7.8rem;
+    margin-left: 9rem;
 }
 
 .cabecalho #terceirofilho{
-    margin-right: 2rem;
+    margin-right: 1rem;
+}
+
+.cabecalho #quartofilho{
+    margin-left: 1rem;
 }
 
 .cabecalhoCLARO{
@@ -215,13 +229,14 @@ i.bi.bi-brightness-high-fill::before{
 #filtroTotalCambio{
     display: flex;
     justify-content: center;
+    margin-right: 4rem;
 }
 
 .total{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 15rem;
+    width: 20rem;
     height: 3rem;
     border-radius: 2rem;
 }
@@ -233,7 +248,7 @@ i.bi.bi-brightness-high-fill::before{
 }
 
 .totalESCURO p{
-    color: var(--cor-jett);
+    color: var(--cor-omen-vyse-2);
 }
 
 .totalCLARO{
@@ -251,14 +266,32 @@ i.bi.bi-brightness-high-fill::before{
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
+    width: auto;
 }
 
 .containertotal{
     position: fixed;
     bottom: 5%;
-    left: 43%;
+    left: 40%;
 }
 
 select{
     border-radius: 30px;
+    height: 1.5rem;
+    border: none;
+    font-weight: 600;
+    font-family: var(--fonte-padrao);
+    text-align: center;
+}
+
+.selectESCURO{
+    background-color: var(--cor-yoru-clove-2);
+    color: var(--cor-omen-vyse-2);
+}
+
+.selectCLARO{
+    background-color: var(--cor-clove);
+    color: var(--cor-vyse);
+
+
 }

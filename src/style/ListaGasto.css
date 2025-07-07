@@ -21,6 +21,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: -10px;
 }
 
 .outraItemLista{
@@ -41,13 +42,17 @@
 
 
 p{
+    display: flex;
+    justify-content: center;
     color: var(--cor-vyse);
-    width: 6rem;
+    width: 7rem;
 }
 
 #itemNome{
-    width: 15rem;
+    width: 16rem;
     padding-left: 1.5rem;
+    display: flex;
+    justify-content: start;
 }
 
 #excluir{
@@ -61,6 +66,6 @@ i#excluir.bi.bi-x-circle-fill{
     align-items: center;
     justify-content: center;
     color: var(--cor-sova);
-    font-size: 22px;
+    font-size: 18px;
     margin-left: 5px;
 }

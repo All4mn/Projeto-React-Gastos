@@ -1,7 +1,7 @@
 import '../style/Cambio.css'
 import { useState } from 'react'
 
-const Cambio = ({setCotacao , setSigla}) => {
+const Cambio = ({setCotacao , setSigla, isClicked}) => {
     const [moeda,setMoeda] = useState("")
 
  const buscarCotacao = async (novaMoeda) => {
@@ -48,9 +48,9 @@ try {
 
 
   return (
-     <div className="cambio" >
-      <h2>Câmbio:</h2> 
-          <select value={moeda} onChange={handleChange}>
+     <div className={isClicked ? 'cambio cambioCLARO' : 'cambio cambioESCURO'} >
+      <h2 className='h2Cambio'>Câmbio:</h2> 
+          <select className={isClicked ? 'selecionar selectCLARO' : 'selecionar selectESCURO'} value={moeda} onChange={handleChange}>
             <option value="">BRL</option>
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>

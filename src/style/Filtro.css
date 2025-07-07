@@ -20,18 +20,18 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    /* background-color: var(--cor-omen); */
     border-radius: 15px;
+    margin-right: 0.5rem;
     width: 11rem;
     height: 2rem;
 }
 
 .filtroContainerCLARO{
-    background-color: var(--cor-omen-vyse-2);
+    background-color: var(--cor-omen);
 }
 
 .filtroContainerESCURO{
-    background-color: var(--cor-omen);
+    background-color: var(--cor-omen-vyse-2);
 }
 
 h2{
