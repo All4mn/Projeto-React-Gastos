@@ -1,5 +1,4 @@
-import React from 'react'
-
+import '../style/Cambio.css'
 import { useState } from 'react'
 
 const Cambio = ({setCotacao , setSigla}) => {
@@ -49,13 +48,14 @@ try {
 
 
   return (
-     <div className="cambio" > 
+     <div className="cambio" >
+      <h2>Câmbio:</h2> 
           <select value={moeda} onChange={handleChange}>
             <option value="">BRL</option>
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
           </select>
-        </div>
+      </div>
   )
 }
 

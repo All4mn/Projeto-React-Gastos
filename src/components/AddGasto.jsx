@@ -31,15 +31,24 @@ const AddGasto = ({adicionarGasto}) => {
   }
 
   return (
-    <div className='addGasto'>
-      <input type="text" value={nome} placeholder='Nome(obrigatório)' onChange={(e)=>(setNome(e.target.value))}/>
-      <input type="number" value={valor} placeholder='Valor(obrigatório)'onChange={(e)=>(setValor(e.target.value))}/>
-      <select value={tipo} onChange={(e)=>(setTipo(e.target.value))} >
-          <option value="">Tipo</option>
-          <option value="Fixo">Fixo</option>
-          <option value="Variavel">Variavel</option>
-      </select>
-      <button className='botao'onClick={hoverAdd}>Adicionar</button>
+    <div className="boxGasto">
+      <div className='addGasto'>
+        <div className="titEinfo">
+          <div id="tituloGasto">
+            <h2>INSIRA AS INFORMAÇÕES SOBRE A NOVA SAÍDA</h2>
+          </div>
+          <div className="infoGasto">
+            <input id='name' type="text" value={nome} placeholder='  Nome(obrigatório)' onChange={(e)=>(setNome(e.target.value))}/>
+            <input id='value' type="number" value={valor} placeholder='  Valor(obrigatório)'onChange={(e)=>(setValor(e.target.value))}/>
+            <select value={tipo} onChange={(e)=>(setTipo(e.target.value))} >
+                <option value="">Tipo</option>
+                <option value="Fixo">Fixo</option>
+                <option value="Variavel">Variavel</option>
+            </select>
+          </div>
+        </div>
+        <div id="Add"><button className='botaoADD'onClick={hoverAdd}>Adicionar</button></div>
+      </div>
     </div>
   )
 }

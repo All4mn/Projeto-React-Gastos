@@ -29,6 +29,7 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .container-cor-escura{
@@ -58,21 +59,38 @@
 
 #titulo-cursiva{
     font-family: var(--cursiva);
-    color: var(--cor-sova);
     font-weight: 200;
     font-size: 35px;
 }
+
+.titulo-cursivaCLARO{
+    color: var(--cor-sova);
+}
+
+.titulo-cursivaCLARO{
+    color: var(--cor-sova);
+}
+
+
 
 #titulo-caixaalta{
     font-family: var(--caixa-alta);
     font-weight: 900;
     font-style: italic;
-    color: var(--cor-clove);
     line-height: 5px;
     font-size: 30px;
     letter-spacing: -2px;
     
 }
+
+.titulo-caixaaltaESCURO{
+    color: var(--cor-clove);
+}
+
+.titulo-caixaaltaCLARO{
+    color: var(--cor-vyse);
+}
+
 
 i.bi.bi-brightness-high-fill{
     display: flex;
@@ -96,6 +114,50 @@ i.bi.bi-brightness-high-fill::before{
 
 .botaoluzclaro{
     color: var(--cor-jett);
+}
+
+.boxcabecalho{
+    display: flex;
+    justify-content: center;
+}
+
+.cabecalho{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 1.5rem;
+    margin-right: 27px;
+    width: 50rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 2rem;
+    margin-bottom: -20px;
+}
+
+.cabecalho #primeirofilho{
+    margin-left: 1.5rem;
+}
+
+.cabecalho #segundofilho{
+    margin-left: 7.8rem;
+}
+
+.cabecalho #terceirofilho{
+    margin-right: 2rem;
+}
+
+.cabecalhoCLARO{
+    background-color: var(--cor-vyse);
+}
+
+.cabecalhoCLARO h2{
+    color: var(--cor-clove);
+    font-family: var(--fonte-padrao);
+}
+
+.cabecalhoESCURO{
+    background-color: var(--cor-omen-vyse-2);
 }
 
 .gastos{
@@ -147,8 +209,44 @@ i.bi.bi-brightness-high-fill::before{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
 }
 
-.Total{
-    color: #d8b4e2;
+#filtroTotalCambio{
+    display: flex;
+    justify-content: center;
+}
+
+.total{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15rem;
+    height: 3rem;
+    border-radius: 2rem;
+}
+
+.totalESCURO{
+    background-color: var(--cor-yoru-clove-2);
+    color: var(--cor-jett);
+
+}
+
+.totalCLARO{
+    background-color: var(--cor-jett);
+    color: var(--cor-omen);
+
+}
+
+.total p{
+    font-family: var(--cursiva);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.containertotal{
+    position: fixed;
+    bottom: 5%;
+    left: 43%;
 }
