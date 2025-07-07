@@ -1,5 +1,119 @@
+:root{
+    --caixa-alta: "New Amsterdam", sans-serif;
+    --cursiva: "Imperial Script", cursive;
+    --fonte-padrao: "Questrial", sans-serif;
+
+    --cor-sova: #9ca3db;
+    --cor-yoru: #9b94d5;
+    --cor-reyna: #55286f;
+    --cor-vyse: #673c90;
+    --cor-omen: #52489c;
+    --cor-clove: #d8b4e2;
+    --cor-jett: #f4ebd9;
+
+    --cor-yoru-clove-2: #ffaeb1;
+    --cor-omen-vyse-2: #6ba368;
+}
+
+.boxGasto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
+
 .addGasto{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 10rem;
+    width: 40rem;
+    background-color: var(--cor-sova);
+    font-family: var(--fonte-padrao);
+    border-radius: 1.5625rem;
+}
+
+#Add{
+    display: flex;
     justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+}
+
+.botaoADD{
+    margin-left: 5px;
+    width: 70px;
+    height: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--fonte-padrao);
+    border-radius: 20px;
+}
+
+.botaoADDCLARO{
+    background-color: var(--cor-omen);
+    color: var(--cor-clove);
+    
+}
+
+.botaoADDESCURO{
+    background-color: var(--cor-sova);
+    color: var(--cor-jett);
+
+}
+
+#tituloGasto h2{
+    font-size: 15px;
+    font-family: var(--caixa-alta);
+    letter-spacing: -0.5px;
+    margin: 0.8rem;
+}
+
+.infoGasto{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 4.5rem;
+    margin-right: 4.5rem;
+}
+
+#name{
+    border-radius: 15px;
+    border: none;
+
+}
+
+.nameCLARO{
+    background-color: var(--cor-yoru);
+    color: var(--cor-reyna);
+    
+}
+
+.nameESCURO{
+    background-color: var(--cor-sova);
+    color: var(--cor-yoru-clove-2);
+    
+}
+
+#value{
+    border-radius: 15px;
+    border: none;
+}
+
+.valueCLARO{
+    background-color: var(--cor-yoru);
+    color: var(--cor-reyna);
+    
+}
+
+.valueESCURO{
+    background-color: var(--cor-sova);
+    color: var(--cor-yoru-clove-2);
+    
+}
+
+.titEinfo{
+    display: flex;
+    flex-direction: column;
 }

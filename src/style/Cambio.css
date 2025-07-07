@@ -15,7 +15,7 @@
     --cor-omen-vyse-2: #6ba368;
 }
 
-#filtroContainer{
+.cambio{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -26,11 +26,11 @@
     height: 2rem;
 }
 
-.filtroContainerCLARO{
+.cambioCLARO{
     background-color: var(--cor-omen);
 }
 
-.filtroContainerESCURO{
+.cambioESCURO{
     background-color: var(--cor-omen-vyse-2);
 }
 
@@ -44,18 +44,18 @@ h2{
     margin-left: 5px;
 }
 
-.select{
+.selecionar{
     width: 6.25rem;
     height: 1.4rem;
     border-radius: 10px;
 }
 
-.selectCLARO{
+.selecionarCLARO{
     background-color: var(--cor-clove);
     
 }
 
-.selectESCURO{
+.selecionarESCURO{
     background-color: var(--cor-yoru-clove-2);
 
 }

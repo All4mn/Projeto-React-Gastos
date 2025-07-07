@@ -68,39 +68,52 @@ function App() {
 
   return (
     <div className={isClicked ? 'container container-cor-escura' : 'container container-cor-clara'}>
-        <div className="box-cabecalho">
-          <div className="titulo">
-          <h1 id='titulo-cursiva'>Controle de</h1>
-          <h1 id='titulo-caixaalta'>FINANÇAS</h1>
+        <div className="TUDO">
+          <div className="box-cabecalho">
+            <div className="titulo">
+            <h1 id='titulo-cursiva'>Controle de</h1>
+            <h1 id='titulo-caixaalta'>FINANÇAS</h1>
+            </div>
+            {/* (aqui em baixo) class="bi bi-brightness-high-fill" parece desnecessario, e tava dando um erro no console */}
+            <i  className= {isClicked ? 'bi bi-brightness-high-fill botaoluzclaro' : 'bi bi-brightness-high-fill botaoluzescuro'} onClick={mudarCor}></i>
           </div>
-          {/* (aqui em baixo) class="bi bi-brightness-high-fill" parece desnecessario, e tava dando um erro no console */}
-          <i  className= {isClicked ? 'bi bi-brightness-high-fill botaoluzclaro' : 'bi bi-brightness-high-fill botaoluzescuro'} onClick={mudarCor}></i>
+          <div className='CriarFiltroCambio'>
+          <button className='botaoCriar botao' onClick={toggleCriarBox}>Criar <span>+</span></button>
+          <div id="filtroTotalCambio">
+            <Filtro filtrar={filtrar} setFiltrar={setFiltrar}/>
+            <Cambio setCotacao={setCotacao} setSigla={setSigla}/>
+          </div>
+          </div>
+          {/* fiz separado msm pq senao dava mt trampo */}
+          <div style={{ display: criarBox ? "block" : "none" }} >
+          <AddGasto  adicionarGasto = {adicionarGasto}/>
+          </div>
+          <div className="boxcabecalho">
+            <div className= {isClicked ? 'cabecalho cabecalhoCLARO' : 'cabecalho cabecalhoESCURO'}>
+              <h2 id='primeirofilho'>Descrição</h2>
+              <h2 id='segundofilho'>Valor</h2>
+              <h2 id='terceirofilho'>Categoria</h2>
+            </div>
+          </div>
+          <div className='gastos'>
+            {gastos
+            .filter((objGasto)=>
+              filtrar === "all"? true: filtrar === "fix"? objGasto.tipo === "Fixo": objGasto.tipo === "Variavel")
+            .map((objGasto)=>(
+              <ListaGasto
+              isClicked={isClicked} // precisava disso aqui anna, agr tas funcionando - God Of Codes (allan)
+              key={objGasto.id}
+              propGasto={objGasto}
+              removerGasto={removerGasto}
+              cotacao = {cotacao}
+              sigla = {sigla}/>))}
+          </div>
         </div>
-        <div className='CriarFiltroCambio'>
-        <button className='botaoCriar botao' onClick={toggleCriarBox}>Criar <span>+</span></button>
-        <Filtro filtrar={filtrar} setFiltrar={setFiltrar}/>
-        <div>
-          <p className='Total'>Total: {total()}</p>
+      <div className="containertotal">
+        <div className="total">
+            <p>Total: {total()}</p>
         </div>
-        <Cambio setCotacao={setCotacao} setSigla={setSigla}/> 
-        {/* fiz separado msm pq senao dava mt trampo */}
-        </div>
-        <div style={{ display: criarBox ? "block" : "none" }} >
-        <AddGasto  adicionarGasto = {adicionarGasto}/>
-        </div>
-        <div className='gastos'>
-          {gastos
-          .filter((objGasto)=> 
-            filtrar === "all"? true: filtrar === "fix"? objGasto.tipo === "Fixo": objGasto.tipo === "Variavel")
-          .map((objGasto)=>(
-            <ListaGasto 
-            isClicked={isClicked} // precisava disso aqui anna, agr tas funcionando - God Of Codes (allan)
-            key={objGasto.id}
-            propGasto={objGasto} 
-            removerGasto={removerGasto}
-            cotacao = {cotacao}
-            sigla = {sigla}/>))}
-        </div>
+      </div>
       </div>
   )
 }

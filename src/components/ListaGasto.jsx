@@ -7,7 +7,7 @@ const ListaGasto = ( {propGasto,removerGasto,isClicked, cotacao, sigla}) => {
 
   return (
     <div className='itemLista'>
-      <div className={isClicked ? 'outraItemLista corlistaescuro' : 'outraItemLista corlistaclaro'} >
+      <div className={isClicked ? 'itemLista outraItemLista corlistaescuro' : 'itemLista outraItemLista corlistaclaro'} >
           <p id='itemNome'>{propGasto.nome}</p>
           <p>{sigla} {(valorCerto)}</p>
           <p>{propGasto.tipo}</p>

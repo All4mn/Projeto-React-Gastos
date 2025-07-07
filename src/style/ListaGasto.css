@@ -28,7 +28,7 @@
     flex-direction: row;
     margin-bottom: 10px;
     border-radius: 3px;
-    width: 50rem;
+    width: 50.1rem;
 }
 
 .corlistaescuro{
@@ -47,7 +47,7 @@ p{
 
 #itemNome{
     width: 15rem;
-    padding-left: .3125rem;
+    padding-left: 1.5rem;
 }
 
 #excluir{
@@ -61,4 +61,6 @@ i#excluir.bi.bi-x-circle-fill{
     align-items: center;
     justify-content: center;
     color: var(--cor-sova);
+    font-size: 22px;
+    margin-left: 5px;
 }
