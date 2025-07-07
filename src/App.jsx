@@ -86,7 +86,7 @@ function App() {
           </div>
           {/* fiz separado msm pq senao dava mt trampo */}
           <div style={{ display: criarBox ? "block" : "none" }} >
-          <AddGasto  adicionarGasto = {adicionarGasto}/>
+          <AddGasto  adicionarGasto = {adicionarGasto} isClicked={isClicked}/>
           </div>
           <div className="boxcabecalho">
             <div className= {isClicked ? 'cabecalho cabecalhoCLARO' : 'cabecalho cabecalhoESCURO'}>
@@ -110,7 +110,7 @@ function App() {
           </div>
         </div>
       <div className="containertotal">
-        <div className="total">
+        <div className={isClicked ? 'total totalCLARO': 'total totalESCURO'}>
             <p>Total: {total()}</p>
         </div>
       </div>

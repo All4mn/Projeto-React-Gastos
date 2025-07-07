@@ -232,10 +232,18 @@ i.bi.bi-brightness-high-fill::before{
 
 }
 
+.totalESCURO p{
+    color: var(--cor-jett);
+}
+
 .totalCLARO{
     background-color: var(--cor-jett);
-    color: var(--cor-omen);
+    
+}
 
+.totalCLARO p{
+    color: var(--cor-omen);
+    
 }
 
 .total p{
