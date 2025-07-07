@@ -258,3 +258,7 @@ i.bi.bi-brightness-high-fill::before{
     bottom: 5%;
     left: 43%;
 }
+
+select{
+    border-radius: 30px;
+}
